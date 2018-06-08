@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/biigpongsatorn/ethereum-js-101/issues"
   },
-  "homepage": "https://github.com/biigpongsatorn/ethereum-js-101#readme"
+  "homepage": "https://github.com/biigpongsatorn/ethereum-js-101#readme",
+  "dependencies": {
+    "web3": "^1.0.0-beta.34"
+  }
 }
