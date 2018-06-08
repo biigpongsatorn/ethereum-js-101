@@ -1,0 +1,22 @@
+{
+  "name": "ethereum-js-101",
+  "version": "1.0.0",
+  "description": "Ethereum JavaScript API 101",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biigpongsatorn/ethereum-js-101.git"
+  },
+  "keywords": [
+    "eth"
+  ],
+  "author": "biigpongsatorn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/biigpongsatorn/ethereum-js-101/issues"
+  },
+  "homepage": "https://github.com/biigpongsatorn/ethereum-js-101#readme"
+}
