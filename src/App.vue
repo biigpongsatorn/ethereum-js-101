@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <div class="title">
+      <div>Web3 Version {{ web3.version }}</div>
+      <div><img src="./assets/eth.png"></div>
+    </div>
   </div>
 </template>
 
