@@ -39,7 +39,7 @@ export default {
   float: left;
   width: 100%;
   height: 250px;
-  background: #151524;
+  background: #0facf3;
   position: relative;
 }
 .header--content {
