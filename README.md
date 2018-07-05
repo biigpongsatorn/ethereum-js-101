@@ -1,10 +1,14 @@
+<center>
+<img src="https://cdn-images-1.medium.com/max/1600/1*7WGOhJtQNAvCh_QAYzBqTw.jpeg"/>
+</center>
+
 # Go network ICO whales.
 
 A website for follow all movement of `Go network ICO whales`, If he/she move. We must know. 😎
 
-<center>
-<img src="https://cdn-images-1.medium.com/max/1600/1*7WGOhJtQNAvCh_QAYzBqTw.jpeg"/>
-</center>
+# Website
+
+[got-whales.netlify.com](https://got-whales.netlify.com/)
 
 # ⭐️ Support
 
