@@ -1,7 +1,7 @@
 <template>
   <div class="header--container">
     <div class="header--content">
-      {{ ethAmount }} ETH
+      {{ ethAmount }} Ether
     </div>
   </div>
 </template>
