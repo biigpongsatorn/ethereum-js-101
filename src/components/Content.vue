@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
+
 export default {
   name: 'Content',
   filters: {
@@ -33,7 +35,6 @@ export default {
   data () {
     return {
       activeTab: 0,
-      addr: '0x736a376e4db6f1f52f746a75280774e91f9a2dfc',
       contractAddr: '0x423b5f62b328d0d6d44870f4eee316befa0b2df5',
       gotBalance: 0,
       gotContract: null
@@ -42,8 +43,22 @@ export default {
   created () {
     this.getGotBalance()
   },
+  watch: {
+    addr () {
+      this.getGotBalance()
+    }
+  },
+  computed: {
+    ...mapState({
+      addr: state => state.addressSelected
+    })
+  },
   methods: {
+    ...mapActions([
+      'setIsLoading'
+    ]),
     async getGotBalance () {
+      this.setIsLoading(1)
       // Get the address ready for the call, substring removes the '0x', as its not required
       const tknAddress = (this.addr).substring(2)
 
@@ -55,6 +70,7 @@ export default {
         data: contractData // Combination of contractData and tknAddress, required to call the balance of an address
       })
       this.gotBalance = parseInt(this.$web3.utils.fromWei(result))
+      this.setIsLoading(-1)
     }
   }
 }

@@ -6,7 +6,8 @@ import * as getters from './getters'
 const store = () => {
   return new Vuex.Store({
     state: {
-      isLoading: 0
+      isLoading: 0,
+      addressSelected: '0xb21FD5878D1e1B5Dbe1b702781AD1C2B53CEEa57'
     },
     actions,
     mutations,

@@ -1,14 +1,15 @@
 <template>
   <div id="app">
     <b-loading :is-full-page="true" :active="isLoading > 0"></b-loading>
-    <div class="f-left w-20pct h-100vh pd-30px app--sidebar-container">
+    <div class="f-left w-20pct h-100vh pd-30px app--sidebar-container" v-if="isShowSideBar">
       <div class="f-w-bold mg-bt-10px">Whales list</div>
-      <div class="app--whales-item" v-for="(addr, i) in whales" :key="i">
+      <div class="app--whales-item" v-for="(addr, i) in whales" :key="i" @click="selectWhale(addr)">
         <WalletAddress :address="addr"/>
       </div>
     </div>
-    <div class="f-left w-80pct">
-      <div class="f-left w-100pct">
+    <div class="f-left w-80pct" :class="{ 'w-100pct': !isShowSideBar }">
+      <div class="f-left w-100pct pst-relative">
+        <svg-filler path="/static/svg/menu.svg" fill="#fff" width="24px" class="app--menu-icon" @click="isShowSideBar = !isShowSideBar"/>
         <Header/>
       </div>
       <div class="f-left w-100pct mn-h-300calc">
@@ -26,7 +27,7 @@ import Header from '@/components/Header'
 import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import WalletAddress from '@/components/WalletAddress'
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'App',
@@ -40,13 +41,22 @@ export default {
         '0x5b63863f60dc27a2dd0678644a1a7753fe1e334a',
         '0xe765825804182d16f2dfba8fc216f9abade567cb',
         '0x1fe9c577b9b82a31447267f40664581269e92886'
-      ]
+      ],
+      isShowSideBar: true
     }
   },
   computed: {
     ...mapGetters([
       'isLoading'
     ])
+  },
+  methods: {
+    ...mapActions([
+      'setAddressSelected'
+    ]),
+    selectWhale (addr) {
+      this.setAddressSelected(addr)
+    }
   },
   components: {
     Header,
@@ -60,6 +70,13 @@ export default {
 <style scoped>
 .app--sidebar-container {
   border-right: 1px solid #e6e6e6;
+}
+.app--menu-icon {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
 }
 .app--whales-item {
  padding: 5px;
