@@ -7,12 +7,6 @@
             {{ gotBalance | amount }} GOT
           </div>
         </b-tab-item>
-        <!-- <b-tab-item label="Token Transfers">
-          🚧 Work in progress
-        </b-tab-item>
-        <b-tab-item label="Transactions">
-          🚧 Work in progress
-        </b-tab-item> -->
       </b-tabs>
     </div>
   </div>
