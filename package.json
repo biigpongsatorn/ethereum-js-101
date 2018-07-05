@@ -12,9 +12,9 @@
   },
   "dependencies": {
     "begeta": "^0.1.19",
+    "buefy": "^0.6.6",
     "bulma": "^0.7.1",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1",
     "web3": "^1.0.0-beta.34"
   },
   "devDependencies": {

@@ -1,24 +1,28 @@
 <template>
   <div id="app">
-    <div>
-      <div><img src="./assets/eth.png" width="21px"> Web3 Version {{ web3.version }}</div>
+    <div class="f-left w-100pct">
+      <Header/>
+    </div>
+    <div class="f-left w-100pct h-200px">
+      <Content/>
+    </div>
+    <div class="f-left w-100pct">
+      <Footer/>
     </div>
   </div>
 </template>
 
 <script>
+import Header from '@/components/Header'
+import Content from '@/components/Content'
+import Footer from '@/components/Footer'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Header,
+    Content,
+    Footer
+  }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin: 30px;
-}
-</style>
