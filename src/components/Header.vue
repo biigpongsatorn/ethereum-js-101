@@ -3,16 +3,19 @@
     <div class="header--content">
       {{ ethAmount }} Ether
     </div>
+    <div class="header--wallet" @click="goToEtherScan()">
+      <svg-filler path="/static/svg/wallet.svg" fill="#fff" width="18px" class="mg-r-5px"/>
+      {{ addr }}
+    </div>
   </div>
 </template>
 
 <script>
-import { toNumber } from '@/utils/formatter'
 export default {
   name: 'Header',
   data () {
     return {
-      myEthAddress: '0x5e2edf59e19e4a6d85c4b44267258380445f87ee',
+      addr: '0x736a376e4db6f1f52f746a75280774e91f9a2dfc',
       ethAmount: 0
     }
   },
@@ -21,9 +24,11 @@ export default {
   },
   methods: {
     async watchBalance () {
-      const balance = await this.$web3.eth.getBalance(this.myEthAddress)
-      this.ethAmount = toNumber(balance)
-      console.log(balance, this.ethAmount)
+      const balance = await this.$web3.eth.getBalance(this.addr)
+      this.ethAmount = parseFloat(this.$web3.utils.fromWei(balance)).toFixed(3)
+    },
+    goToEtherScan () {
+      window.location.href = `https://etherscan.io/address/${this.addr}`
     }
   }
 }
@@ -35,6 +40,7 @@ export default {
   width: 100%;
   height: 250px;
   background: #151524;
+  position: relative;
 }
 .header--content {
   font-weight: bold;
@@ -42,5 +48,17 @@ export default {
   color: #fff;
   text-align: center;
   line-height: 250px;
+}
+.header--wallet {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 200px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  color: #fff;
+  cursor: pointer;
 }
 </style>
