@@ -1,14 +1,31 @@
 <template>
   <div class="header--container">
     <div class="header--content">
-      $9,234.32
+      {{ ethAmount }} ETH
     </div>
   </div>
 </template>
 
 <script>
+import { toNumber } from '@/utils/formatter'
 export default {
-  name: 'Header'
+  name: 'Header',
+  data () {
+    return {
+      myEthAddress: '0x5e2edf59e19e4a6d85c4b44267258380445f87ee',
+      ethAmount: 0
+    }
+  },
+  created () {
+    this.watchBalance()
+  },
+  methods: {
+    async watchBalance () {
+      const balance = await this.$web3.eth.getBalance(this.myEthAddress)
+      this.ethAmount = toNumber(balance)
+      console.log(balance, this.ethAmount)
+    }
+  }
 }
 </script>
 

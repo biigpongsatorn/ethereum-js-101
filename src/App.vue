@@ -3,7 +3,7 @@
     <div class="f-left w-100pct">
       <Header/>
     </div>
-    <div class="f-left w-100pct h-200px">
+    <div class="f-left w-100pct mn-h-300calc">
       <Content/>
     </div>
     <div class="f-left w-100pct">

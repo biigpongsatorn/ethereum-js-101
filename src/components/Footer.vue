@@ -1,6 +1,6 @@
 <template>
   <div class="h-50px t-al-center footer--container">
-    <img src="/static/image/eth.png" width="21px" class="footer--img-eth"> Web3 Version {{ web3.version }}
+    <img src="/static/image/eth.png" width="21px" class="footer--img-eth"> Web3 Version {{ $web3.version }}
   </div>
 </template>
 

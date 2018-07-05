@@ -8,7 +8,7 @@ import Buefy from 'buefy'
 import Web3 from 'web3'
 
 // Style sheet
-import 'buefy/lib/buefy.css'
+import '@/assets/buefy.scss'
 import 'begeta/css/begeta.min.css'
 import '@/assets/main.css'
 
@@ -16,7 +16,7 @@ const web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io
 
 Vue.use(Buefy)
 
-Vue.prototype.web3 = web3
+Vue.prototype['$web3'] = web3
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
