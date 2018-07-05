@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <div class="title">
-      <div>Web3 Version {{ web3.version }}</div>
-      <div><img src="./assets/eth.png"></div>
+    <div>
+      <div><img src="./assets/eth.png" width="21px"> Web3 Version {{ web3.version }}</div>
     </div>
   </div>
 </template>
@@ -20,6 +19,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 30px;
 }
 </style>
