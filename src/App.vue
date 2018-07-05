@@ -2,8 +2,8 @@
   <div id="app">
     <b-loading :is-full-page="true" :active="isLoading > 0"></b-loading>
     <div class="f-left w-20pct h-100vh pd-30px app--sidebar-container" v-if="isShowSideBar">
-      <div class="f-w-bold mg-bt-10px">Whales list</div>
-      <div class="app--whales-item" v-for="(addr, i) in whales" :key="i" @click="selectWhale(addr)">
+      <div class="f-w-bold mg-bt-20px">Whales list</div>
+      <div class="app--whales-item" v-for="(addr, i) in whales" :key="i" @click="selectWhale(addr)" :style="{ color: addrSelected === addr ? '#0facf3' : '#a4a4a4' }">
         <WalletAddress :address="addr"/>
       </div>
     </div>
@@ -27,7 +27,7 @@ import Header from '@/components/Header'
 import Content from '@/components/Content'
 import Footer from '@/components/Footer'
 import WalletAddress from '@/components/WalletAddress'
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'App',
@@ -46,9 +46,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([
-      'isLoading'
-    ])
+    ...mapState({
+      addrSelected: state => state.addressSelected,
+      isLoading: state => state.isLoading
+    })
   },
   methods: {
     ...mapActions([
