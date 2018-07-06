@@ -79,7 +79,7 @@ export default {
   cursor: pointer;
 }
 .app--whales-item {
- padding: 5px;
+  padding: 5px;
 }
 .app--whales-item:hover {
   color: #0facf3;
