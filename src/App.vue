@@ -7,7 +7,7 @@
     width="160px"
     height="30px"/>
     <b-loading :is-full-page="true" :active="isLoading > 0"></b-loading>
-    <div class="f-left w-20pct h-100vh pd-30px pst-relative app--sidebar-container" v-if="isShowSideBar">
+    <div class="f-left w-20pct h-100vh pst-relative app--sidebar-container" v-if="isShowSideBar">
       <div class="f-left w-100pct h-100vh pd-bt-30px ovf-auto">
         <div class="f-w-bold mg-bt-20px">Whales list</div>
         <div class="app--whales-item" v-for="(addr, i) in whales" :key="i" @click="selectWhale(addr)" :style="{ color: addrSelected === addr ? '#0facf3' : '#a4a4a4' }">
